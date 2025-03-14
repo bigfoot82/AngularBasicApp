@@ -28,7 +28,7 @@
     "@angular/cli": "^19.0.0",
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
-    "@types/node": "^v18.19"
+    "@types/node": "^v18.19",
     "copyfiles": "^2.4.1",
     "jasmine-core": "~5.6.0",
     "jasmine-marbles": "~0.9.2",
