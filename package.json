@@ -5,7 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "build:prod": "ng build --configuration production --base-href https://bigfoot82.github.io/angular-github-actions/",
+    "test": "ng test",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +31,7 @@
     "@angular/cli": "^19.0.0",
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
-    "@types/node": "^16.11.35",
+    "@types/node": "^v18.19",
     "angular-cli-ghpages": "^2.0.3",
     "copyfiles": "^2.4.1",
     "jasmine-core": "~5.6.0",
