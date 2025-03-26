@@ -16,9 +16,12 @@
     "@angular/forms": "^19.0.0",
     "@angular/platform-browser": "^19.0.0",
     "@angular/router": "^19.0.0",
+    "apollo-angular": "^10.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.0",
+    "@apollo/client": "^3.0.0",
+    "graphql": "^16"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.0",
@@ -26,6 +29,7 @@
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^16.11.35",
+    "angular-cli-ghpages": "^2.0.3",
     "copyfiles": "^2.4.1",
     "jasmine-core": "~5.6.0",
     "jasmine-marbles": "~0.9.2",
