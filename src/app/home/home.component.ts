@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { HousingLocation } from '../housinglocation';
 import { HousingService } from '../housing.service';
-import { ExampleService } from '../example.service';
+import { HygraphService } from '../hygraph.service';
 import { Subscription } from 'rxjs';
 import { Apollo, gql } from 'apollo-angular';
 
@@ -11,18 +11,6 @@ import { Apollo, gql } from 'apollo-angular';
   selector: 'app-home',
   imports: [CommonModule, HousingLocationComponent],
   template: `
-    <section>
-      <form>
-        <input type="text" placeholder="Filter by city" #filter>
-        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
-      </form>
-    </section>
-    <section class="results">
-      <app-housing-location
-        *ngFor="let housingLocation of filteredLocationList"
-        [housingLocation]="housingLocation"
-      ></app-housing-location>
-    </section>
 
     <!-- Falls die Daten noch laden -->
     <div *ngIf="loading">
@@ -45,6 +33,7 @@ import { Apollo, gql } from 'apollo-angular';
         <h3>{{ event.title }}</h3>
         {{ event.description }}
         {{ event.startTime }}
+        {{ event.endTime}}
       </li>
     </ul>
   `,
@@ -56,21 +45,20 @@ export class HomeComponent implements OnInit{
 
   private querySubscription!: Subscription; // Subscription-Variable
 
-  // sportEvents: any;
-
   loading = true;
   error: any;
 
   sportEvents: any[] = [];
-  housingService: HousingService = inject(HousingService);
-  exampleService: ExampleService = inject(ExampleService);
-  filteredLocationList: HousingLocation[] = [];
+  // housingService: HousingService = inject(HousingService);
+  // hygraphService: HygraphService = inject(HygraphService);
+  // filteredLocationList: HousingLocation[] = [];
 
   constructor(private apollo: Apollo) {
-        this.housingLocationList = this.housingService.getAllHousingLocations();
-    this.filteredLocationList = this.housingLocationList;
+        //this.housingLocationList = this.housingService.getAllHousingLocations();
+    //this.filteredLocationList = this.housingLocationList;
   }
-  filterResults(text: string) {
+  
+ /* filterResults(text: string) {
     if (!text) {
       this.filteredLocationList = this.housingLocationList;
       return;
@@ -79,7 +67,7 @@ export class HomeComponent implements OnInit{
       housingLocation?.city.toLowerCase().includes(text.toLowerCase()),
     );
   }
-
+*/
   ngOnInit(): void {
 
 

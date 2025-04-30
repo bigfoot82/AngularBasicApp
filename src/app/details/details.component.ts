@@ -5,7 +5,7 @@ import { HousingService } from '../housing.service';
 
 import { HousingLocation } from '../housinglocation';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ExampleService } from '../example.service';
+import { HygraphService } from '../hygraph.service';
 @Component({
   selector: 'app-details',
   imports: [CommonModule, ReactiveFormsModule],
@@ -56,7 +56,7 @@ export class DetailsComponent {
     lastName: new FormControl(''),
     email: new FormControl(''),
   });
-  constructor(private productService: ExampleService) {
+  constructor(private productService: HygraphService) {
     const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
     this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
 
